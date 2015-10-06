@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<fest:template xmlns:fest="http://fest.mail.ru" context="json">
+	<fest:var name="gameName">Chants!</fest:var>
+	<div class="header">
+		<fest:if test="json.backbutton">
+		   	<button class="header__backbutton" id="backbutton">
+				&lt;
+			</button>
+			<script>
+				function backButtonClick(){
+		            $('#backbutton').on('click', function(){
+		                console.log('backbutton click');
+		                showMainScreen();
+		            });
+		        }
+				backButtonClick();
+			</script>
+		</fest:if>
+		<div class="header__text">
+			<fest:value>gameName</fest:value>
+		</div>
+	</div>
+</fest:template>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<fest:script>
+		var json = {
+			backbutton : false
+		};
+	</fest:script>
+	<fest:include context_name="json" src="./base.xml"/>
+	<div class="main-menu">
+		<button class="main-menu__button" id="scoreboard-button">
+			Scoreboard
+		</button>
+		<button class="main-menu__button" id="signin-button">
+			Sign in
+		</button>
+		<button class="main-menu__button" id="game-button">
+			Game
+		</button>
+	</div>
+	<script>
+	    var scoreboard = $('#scoreboard-button');
+        scoreboard.on('click', function(){
+            showScoreboardScreen();
+        });
+
+        var signin = $('#signin-button');
+        signin.on('click', function(){
+            showLoginScreen();
+        });
+
+        var game = $('#game-button');
+        game.on('click', function(){
+            showGameScreen();
+        });
+	</script>
+</fest:template>

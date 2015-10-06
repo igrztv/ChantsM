@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<fest:include context_name="json" src="./base.xml"/>
+	<form action="" method="" autocomplete="on" class="signin-form"> 
+		<input class="signin-form__input" type="text" name="nick" value="" placeholder="your name" required="true" id="nick-name" />
+		<input class="signin-form__input" type="email" name="email" value="" placeholder="address@example.com" required="true" id="id_email"/>
+		<input class="signin-form__input" type="password" name="paseord" value="" placeholder="password" required="true" id="id_pass"/>
+		<input class="signin-form__input" type="submit" name="signin" value="Go" id="signin-button"/>
+	</form>
+	
+	<script>
+		function submitLogin(event) {
+            $.ajax({
+                url: '/api/v1/auth/signin',
+                success: function(data) {
+                    showGameScreen();
+                }
+            }); 
+            event.preventDefault();
+        };
+        $('#signin-button').on('click', function(){
+
+        	var form = $('.signin-form');
+
+        	var pass = form.children('#nick_name');
+        	if(pass.value()
+        	console.log('pass');
+        	console.log(pass);
+
+        	submitLogin(event);
+        });
+	</script>
+</fest:template>
